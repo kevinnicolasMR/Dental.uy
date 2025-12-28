@@ -1,0 +1,10 @@
+logica\Odontologo.class
+logica\Turno.class
+logica\Usuario.class
+logica\Secretario.class
+logica\Responsable.class
+logica\Paciente.class
+logica\Persona.class
+com\mycompany\aplicacionodontologia\JakartaRestConfiguration.class
+logica\Horario.class
+com\mycompany\aplicacionodontologia\resources\JakartaEE11Resource.class
