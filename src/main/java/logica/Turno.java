@@ -1,5 +1,7 @@
 package logica;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import java.util.Date;
 
 public class Turno {
@@ -7,6 +9,10 @@ public class Turno {
     private Date fecha_turno; 
     private String afeccion; 
     private String hora_turno;
+    
+    @ManyToOne
+    @JoinColumn(name="id_turno")
+    private Odontologo odonto;
 
     public Turno() {
     }

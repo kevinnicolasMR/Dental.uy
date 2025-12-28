@@ -1,11 +1,13 @@
 package logica;
 
+import jakarta.persistence.Entity;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Paciente extends Persona {
     
-    private int id_paciente; 
+    //private int id_paciente; 
     private boolean tiene_OS;
     private String tipoSanfre;
     private Responsable unResponsable;
@@ -14,18 +16,17 @@ public class Paciente extends Persona {
     public Paciente() {
     }
 
-    public Paciente(int id_paciente, boolean tiene_OS, String tipoSanfre, Responsable unResponsable, List<Turno> listaTurnos, String nombre, String apellido, int telefono, String direccion, Date fecha_nac) {
-        super(nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_paciente = id_paciente;
+    public Paciente(boolean tiene_OS, String tipoSanfre, Responsable unResponsable, List<Turno> listaTurnos, int id, String nombre, String apellido, int telefono, String direccion, Date fecha_nac) {
+        super(id, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_OS = tiene_OS;
         this.tipoSanfre = tipoSanfre;
         this.unResponsable = unResponsable;
         this.listaTurnos = listaTurnos;
     }
 
-    public int getId_paciente() {
-        return id_paciente;
-    }
+ 
+
+   
 
     public boolean isTiene_OS() {
         return tiene_OS;
@@ -43,9 +44,7 @@ public class Paciente extends Persona {
         return listaTurnos;
     }
 
-    public void setId_paciente(int id_paciente) {
-        this.id_paciente = id_paciente;
-    }
+  
 
     public void setTiene_OS(boolean tiene_OS) {
         this.tiene_OS = tiene_OS;

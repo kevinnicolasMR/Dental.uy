@@ -1,25 +1,27 @@
 package logica;
 
+import jakarta.persistence.Entity;
 import java.util.Date;
 
+
+@Entity
 public class Secretario extends Persona {
-    private int id_secretario;
+    //private int id_secretario;
     private String sector;
     private Usuario unUsuario;
 
     public Secretario() {
     }
 
-    public Secretario(int id_secretario, String sector, Usuario unUsuario, String nombre, String apellido, int telefono, String direccion, Date fecha_nac) {
-        super(nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_secretario = id_secretario;
+    public Secretario(String sector, Usuario unUsuario, int id, String nombre, String apellido, int telefono, String direccion, Date fecha_nac) {
+        super(id, nombre, apellido, telefono, direccion, fecha_nac);
         this.sector = sector;
         this.unUsuario = unUsuario;
     }
 
-    public int getId_secretario() {
-        return id_secretario;
-    }
+   
+
+    
 
     public String getSector() {
         return sector;
@@ -29,9 +31,6 @@ public class Secretario extends Persona {
         return unUsuario;
     }
 
-    public void setId_secretario(int id_secretario) {
-        this.id_secretario = id_secretario;
-    }
 
     public void setSector(String sector) {
         this.sector = sector;
