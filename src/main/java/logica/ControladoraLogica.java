@@ -19,6 +19,28 @@ public class ControladoraLogica {
     controlPersis.crearUsuario(usu); 
     }
     
+    //------------------Validar el Ingreso-------------------------
+
+    public boolean validarIngreso(String usuario, String pass) {
+        boolean ingreso = false;
+        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+        listaUsuarios = controlPersis.getUsuarios();
+        
+        for(Usuario usu: listaUsuarios){
+           if(usu.getNombreUsuario().equals(usuario)){
+              if(usu.getContra().equals(pass)){
+                  ingreso = true;
+              }else{
+                  ingreso = false;
+              }
+             
+           }
+        }
+        return ingreso;
+    }
+   
+    //--------------------------------------------------------------
+    
     public List<Usuario> getUsuario(){
       return controlPersis.getUsuarios();
     }
@@ -34,5 +56,5 @@ public class ControladoraLogica {
     public void editarUsuario(Usuario usu) throws Exception {
         controlPersis.editarUsuario(usu);
     }
-   
+
 }

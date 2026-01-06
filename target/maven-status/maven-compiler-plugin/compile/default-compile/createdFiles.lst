@@ -11,6 +11,7 @@ persistencia\ControladoraPersistencia.class
 persistencia\exceptions\IllegalOrphanException.class
 persistencia\SecretarioJpaController.class
 logica\Odontologo.class
+servlets\SvLogin.class
 logica\ControladoraLogica.class
 persistencia\HorarioJpaController.class
 logica\Paciente.class

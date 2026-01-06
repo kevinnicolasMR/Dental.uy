@@ -2,6 +2,15 @@
 
 <head>
 
+    <%
+    HttpSession mysession = request.getSession();
+    String usuario = (String)request.getSession().getAttribute("usuario");
+    if(usuario== null){
+    response.sendRedirect("login.jsp");
+    }
+    
+    %>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=brave">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
