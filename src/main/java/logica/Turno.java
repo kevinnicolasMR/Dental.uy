@@ -1,18 +1,33 @@
 package logica;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Turno {
-    private int id_turno; 
+@Entity
+public class Turno implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id_turno;
+    @Temporal(TemporalType.DATE)
     private Date fecha_turno; 
     private String afeccion; 
     private String hora_turno;
     
     @ManyToOne
-    @JoinColumn(name="id_turno")
+    @JoinColumn(name="id_odonto")
     private Odontologo odonto;
+    
+    @ManyToOne
+    @JoinColumn(name="id_pacien")
+    private Paciente pacien;
 
     public Turno() {
     }

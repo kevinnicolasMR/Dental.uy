@@ -1,16 +1,21 @@
 package logica;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Paciente extends Persona {
+public class Paciente extends Persona implements Serializable {
     
     //private int id_paciente; 
     private boolean tiene_OS;
     private String tipoSanfre;
+    @OneToOne
     private Responsable unResponsable;
+    @OneToMany(mappedBy="pacien")
     private List<Turno> listaTurnos;
 
     public Paciente() {

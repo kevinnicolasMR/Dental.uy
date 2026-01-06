@@ -3,11 +3,12 @@ package logica;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Odontologo extends Persona{
+public class Odontologo extends Persona implements Serializable{
     //private int id_odontologo; 
     private String especialidad;
     @OneToMany(mappedBy="odonto")   
